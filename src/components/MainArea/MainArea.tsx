@@ -80,7 +80,7 @@ const NewReleasesData: SongCard[] = [
 
 export default function MainArea() {
   return (
-    <div className="flex flex-col px-8 w-full bg-[#18191B] gap-8 overflow-y-scroll scroll-container relative">
+    <div className="flex flex-col px-8 pb-[8em] w-full bg-[#18191B] gap-8 overflow-y-scroll scroll-container relative">
       <MainAreaControls />
       <Banner />
       <CardDisplay data={SongCardData} title="Spotify Playlists" />
