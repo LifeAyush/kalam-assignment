@@ -4,12 +4,15 @@
 
 :root {
   --left-background: #101011;
-  --main-background: #18191B;
-  --right-background: #0A0A0A;
+  --main-background: #18191b;
+  --right-background: #0a0a0a;
 }
 
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+.scroll-container::-webkit-scrollbar {
+  display: none;
 }

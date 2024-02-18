@@ -91,7 +91,7 @@ export default function RightSidePanel() {
   ];
 
   return (
-    <div className="flex flex-col w-[350px] h-full bg-[#0A0A0A] gap-6">
+    <div className="flex flex-col w-[350px] h-full bg-[#0A0A0A] gap-6 flex-shrink-0">
       <div className="flex justify-between items-start w-full p-4">
         <div className="flex items-center justify-start gap-2">
           <Image

@@ -36,7 +36,7 @@ const library: NavItem[] = [
 
 export default function LeftSidePanel() {
   return (
-    <div className="flex flex-col w-[250px] h-full bg-[#101011] gap-8">
+    <div className="flex flex-col w-[250px] h-full bg-[#101011] gap-8 flex-shrink-0">
       <div className="flex items-center justify-between py-4 px-4 w-full">
         <FaSpotify style={iconStyle} />
         <MdOutlineMenuOpen style={iconStyle} />
