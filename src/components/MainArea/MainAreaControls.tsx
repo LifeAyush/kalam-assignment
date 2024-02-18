@@ -16,7 +16,7 @@ const iconStyleSearch = {
 
 export default function MainAreaControls() {
   return (
-    <div className="flex w-full gap-6 items-center sticky top-0 left-0 bg-[#18191B] pt-8 pb-1">
+    <div className="flex w-full gap-6 items-center sticky top-0 left-0 bg-[#18191B] pt-8 pb-2">
       <div className="flex items-center gap-2">
         <IoIosArrowBack style={iconStyleSmall} />
         <IoIosArrowForward style={iconStyleSmall} />

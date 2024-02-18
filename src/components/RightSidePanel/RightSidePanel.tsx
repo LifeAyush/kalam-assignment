@@ -52,6 +52,34 @@ export default function RightSidePanel() {
       time: "7 mins",
       image: userProfile,
     },
+    {
+      id: 5,
+      name: "Savage",
+      singer: "Aespa",
+      time: "7 mins",
+      image: userProfile,
+    },
+    {
+      id: 6,
+      name: "Savage",
+      singer: "Aespa",
+      time: "7 mins",
+      image: userProfile,
+    },
+    {
+      id: 7,
+      name: "Savage",
+      singer: "Aespa",
+      time: "7 mins",
+      image: userProfile,
+    },
+    {
+      id: 8,
+      name: "Savage",
+      singer: "Aespa",
+      time: "7 mins",
+      image: userProfile,
+    },
   ];
 
   const MyPlaylists: Playlist[] = [
@@ -89,18 +117,17 @@ export default function RightSidePanel() {
     { title: "Recently Played", songs: RecentSongs, playlists: MyPlaylists },
     { title: "My Playlists", songs: RecentSongs, playlists: MyPlaylists },
   ];
-
   return (
-    <div className="flex flex-col w-[350px] h-full bg-[#0A0A0A] gap-6 flex-shrink-0">
+    <div className="scroll-container flex flex-col w-[320px] h-full bg-[#0A0A0A] gap-6 flex-shrink-0 py-7 overflow-y-scroll">
       <div className="flex justify-between items-start w-full p-4">
-        <div className="flex items-center justify-start gap-2">
+        <div className="flex items-center justify-start gap-3">
           <Image
             src={userProfile}
             alt="User Profile Pic"
             className="w-[24px] h-[24px] rounded-full object-cover"
             style={{
-              width: "24px",
-              height: "24px",
+              width: "28px",
+              height: "28px",
               borderRadius: "50%",
               objectFit: "cover",
             }}

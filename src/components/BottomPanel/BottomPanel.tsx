@@ -23,7 +23,7 @@ const iconStyleSmall = {
 };
 const iconStyleMed = {
   color: "white",
-  fontSize: "1.75em",
+  fontSize: "1.5em",
   cursor: "pointer",
 };
 const iconStyleLarge = {
@@ -33,10 +33,10 @@ const iconStyleLarge = {
 };
 
 export default function BottomPanel() {
-  const [volume, setVolume] = useState(0.5);
+  const [volume, setVolume] = useState(0.75);
   const [mute, setMute] = useState(false);
   const [pause, setPause] = useState(false);
-  const [currentTime, setCurrentTime] = useState(0);
+  const [currentTime, setCurrentTime] = useState(60);
   const duration = 300;
 
   const handleVolumeChange = (newVolume: number) => {
@@ -54,27 +54,29 @@ export default function BottomPanel() {
 
   return (
     <div className="absolute bottom-0 left-0 w-full px-4 pt-4 pb-2 flex items-center justify-between bg-[#0A0A0B] border-solid border-t-2 border-[#232426]">
-      <div className="flex items-center gap-8 w-[14em]">
+      <div className="flex items-center gap-8 w-[15em]">
         <div className="flex flex-col items-start justify-start">
-          <div className="text-white font-normal">Dooba</div>
-          <div className="text-white font-normal">Nanku</div>
+          <div className="text-white font-bold">Dooba</div>
+          <div className="text-[#b3b3b3] font-['Arial'] font-normal text-sm">
+            Nanku
+          </div>
         </div>
         <div className="flex items-center gap-3">
           <FaRegHeart style={iconStyleSmall} />
           <CgAddR style={iconStyleSmall} />
         </div>
       </div>
-      <div className="flex flex-col items-center justify-center">
+      <div className="flex flex-col items-center justify-center gap-2">
         <div className="flex items-center justify-center gap-4">
-          <TbSwitch3 style={iconStyleSmall} />
-          <IoPlaySkipBackOutline style={iconStyleSmall} />
+          <TbSwitch3 style={iconStyleMed} />
+          <IoPlaySkipBackOutline style={iconStyleMed} />
           {!pause ? (
             <IoPauseCircleSharp style={iconStyleLarge} onClick={handlePause} />
           ) : (
             <IoPlayCircleSharp style={iconStyleLarge} onClick={handlePause} />
           )}
-          <IoPlaySkipForwardOutline style={iconStyleSmall} />
-          <IoRepeat style={iconStyleSmall} />
+          <IoPlaySkipForwardOutline style={iconStyleMed} />
+          <IoRepeat style={iconStyleMed} />
         </div>
         <MusicSlider
           currentTime={currentTime}
@@ -82,16 +84,16 @@ export default function BottomPanel() {
           onTimeChange={handleTimeChange}
         />
       </div>
-      <div className="flex items-center gap-2 w-[14em]">
+      <div className="flex items-center gap-3 w-[15em]">
         {!mute ? (
-          <LuVolume1 style={iconStyleSmall} onClick={handleMute} />
+          <LuVolume1 style={iconStyleMed} onClick={handleMute} />
         ) : (
-          <LuVolumeX style={iconStyleSmall} onClick={handleMute} />
+          <LuVolumeX style={iconStyleMed} onClick={handleMute} />
         )}
         <VolumeSlider volume={volume} onVolumeChange={handleVolumeChange} />
-        <IoMicOutline style={iconStyleSmall} />
-        <LuMonitorSmartphone style={iconStyleSmall} />
-        <IoShareSocialOutline style={iconStyleSmall} />
+        <IoMicOutline style={iconStyleMed} />
+        <LuMonitorSmartphone style={iconStyleMed} />
+        <IoShareSocialOutline style={iconStyleMed} />
       </div>
     </div>
   );

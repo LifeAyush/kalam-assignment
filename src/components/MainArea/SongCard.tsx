@@ -9,7 +9,7 @@ interface SongCard {
 
 export default function SongCard({ data }: { data: SongCard }) {
   return (
-    <div className="flex flex-col flex-shrink-0 justify-center items-start gap-4 rounded-lg w-[9.5rem] cursor-pointer">
+    <div className="flex flex-col flex-shrink-0 justify-center items-start gap-4 rounded-lg w-[10.2rem] cursor-pointer">
       <Image
         src={data.image}
         alt="Lofi Beats"
