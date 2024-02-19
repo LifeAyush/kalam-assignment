@@ -1,12 +1,5 @@
-import Image, { StaticImageData } from "next/image";
-
-interface Song {
-  id: number;
-  name: string;
-  singer: string;
-  time: string;
-  image: StaticImageData;
-}
+import Image from "next/image";
+import { Song } from "@/types/types";
 
 export default function SongListView({ song }: { song: Song }) {
   return (
@@ -18,7 +11,9 @@ export default function SongListView({ song }: { song: Song }) {
           className="h-[48px] w-[48px] object-cover rounded"
         />
         <div className="flex flex-col items-start justify-center">
-          <div className="text-white font-['Arial'] font-normal">{song.name}</div>
+          <div className="text-white font-['Arial'] font-normal">
+            {song.name}
+          </div>
           <div className="text-[#a7a7a7] font-['Arial'] text-sm font-normal">
             {song.singer}
           </div>

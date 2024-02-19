@@ -1,24 +1,8 @@
 "use client";
-import { StaticImageData } from "next/image";
 import { useState, useEffect } from "react";
 import SongListView from "./SongListView";
 import PlaylistView from "./PlaylistView";
-
-interface Song {
-  id: number;
-  name: string;
-  singer: string;
-  time: string;
-  image: StaticImageData;
-}
-
-interface Playlist {
-  id: number;
-  name: string;
-  songs: number;
-  time: string;
-  image: StaticImageData;
-}
+import { Song, Playlist } from "@/types/types";
 
 interface ListViewProps {
   title: string;
@@ -33,12 +17,18 @@ export default function ListView({ title, songs, playlists }: ListViewProps) {
   const handleMore = () => {
     setDisplayMore(!displayMore);
   };
+
+  const renderItems = (
+    items: any[],
+    renderItem: (item: any) => JSX.Element
+  ) => {
+    return displayMore
+      ? items.map(renderItem)
+      : items.slice(0, 4).map(renderItem);
+  };
+
   useEffect(() => {
-    if (title === "My Playlists") {
-      setType("playlist");
-    } else {
-      setType("song");
-    }
+    setType(title === "My Playlists" ? "playlist" : "song");
   }, [title]);
 
   return (
@@ -54,20 +44,12 @@ export default function ListView({ title, songs, playlists }: ListViewProps) {
       </div>
       <div className="flex flex-col gap-2 items-start justify-start w-full">
         {type === "song"
-          ? displayMore
-            ? songs.map((song) => {
-                return <SongListView key={song.id} song={song} />;
-              })
-            : songs.slice(0, 4).map((song) => {
-                return <SongListView key={song.id} song={song} />;
-              })
-          : displayMore
-          ? playlists.map((playlist) => {
-              return <PlaylistView key={playlist.id} playlist={playlist} />;
-            })
-          : playlists.slice(0, 2).map((playlist) => {
-              return <PlaylistView key={playlist.id} playlist={playlist} />;
-            })}
+          ? renderItems(songs, (song) => (
+              <SongListView key={song.id} song={song} />
+            ))
+          : renderItems(playlists, (playlist) => (
+              <PlaylistView key={playlist.id} playlist={playlist} />
+            ))}
       </div>
     </div>
   );

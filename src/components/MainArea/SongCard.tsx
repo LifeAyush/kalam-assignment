@@ -1,18 +1,12 @@
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
+import { SongCardData } from "@/types/types";
 
-interface SongCard {
-  id: number;
-  image: StaticImageData;
-  name: string;
-  singer: string;
-}
-
-export default function SongCard({ data }: { data: SongCard }) {
+export default function SongCard({ data }: { data: SongCardData }) {
   return (
     <div className="flex flex-col flex-shrink-0 justify-center items-start gap-4 rounded-lg w-[10.2rem] cursor-pointer">
       <Image
         src={data.image}
-        alt="Lofi Beats"
+        alt={data.name} 
         className="w-full rounded-md object-cover"
       />
       <div className="flex flex-col justify-center items-start w-full gap-1">

@@ -1,4 +1,5 @@
 import React, { ChangeEvent } from "react";
+import PropTypes from "prop-types";
 import styles from "./VolumeSlider.module.css";
 
 interface VolumeSliderProps {
@@ -26,6 +27,12 @@ const VolumeSlider: React.FC<VolumeSliderProps> = ({
       className={styles.volumeSlider}
     />
   );
+};
+
+// Prop type checking
+VolumeSlider.propTypes = {
+  volume: PropTypes.number.isRequired,
+  onVolumeChange: PropTypes.func.isRequired,
 };
 
 export default VolumeSlider;

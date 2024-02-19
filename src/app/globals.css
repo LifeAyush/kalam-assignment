@@ -2,12 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --left-background: #101011;
-  --main-background: #18191b;
-  --right-background: #0a0a0a;
-}
-
 body {
   margin: 0;
   padding: 0;

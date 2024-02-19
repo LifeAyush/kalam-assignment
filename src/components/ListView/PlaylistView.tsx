@@ -1,12 +1,5 @@
-import Image, { StaticImageData } from "next/image";
-
-interface Playlist {
-  id: number;
-  name: string;
-  songs: number;
-  time: string;
-  image: StaticImageData;
-}
+import Image from "next/image";
+import { Playlist } from "@/types/types";
 
 export default function PlaylistView({ playlist }: { playlist: Playlist }) {
   return (

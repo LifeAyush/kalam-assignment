@@ -18,18 +18,26 @@ export default function MainAreaControls() {
   return (
     <div className="flex w-full gap-6 items-center sticky top-0 left-0 bg-[#18191B] pt-8 pb-2">
       <div className="flex items-center gap-2">
-        <IoIosArrowBack style={iconStyleSmall} />
-        <IoIosArrowForward style={iconStyleSmall} />
+        <button>
+          <IoIosArrowBack style={iconStyleSmall} />
+        </button>
+        <button>
+          <IoIosArrowForward style={iconStyleSmall} />
+        </button>
       </div>
       <div className="flex w-full bg-[#EAEAEB] p-3 items-center rounded-3xl gap-3">
-        <FiSearch style={iconStyleSearch} />
+        <button>
+          <FiSearch style={iconStyleSearch} />
+        </button>
         <input
           type="text"
           placeholder="Search for artists, songs, or albums"
           className="w-full bg-[#EAEAEB] border-none outline-none"
         />
       </div>
-      <TfiMoreAlt style={iconStyleSmall} />
+      <button>
+        <TfiMoreAlt style={iconStyleSmall} />
+      </button>
     </div>
   );
 }

@@ -158,3 +158,14 @@
 .musicSlider:disabled::-moz-range-thumb {
   cursor: not-allowed;
 }
+
+@media screen and (max-width: 1150px){
+  .musicSlider {
+    width: 25em;
+  }
+}
+@media screen and (max-width: 900px){
+  .musicSlider {
+    width: 20em;
+  }
+}

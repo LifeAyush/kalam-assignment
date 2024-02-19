@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import VolumeSlider from "./Sliders/VolumeSlider";
 import MusicSlider from "./Sliders/MusicSlider";
 import { FaRegHeart } from "react-icons/fa";
@@ -51,10 +51,17 @@ export default function BottomPanel() {
   const handlePause = () => {
     setPause(!pause);
   };
+  useEffect(() => {
+    if (mute === true) {
+      setVolume(0);
+    } else {
+      setVolume(0.75);
+    }
+  }, [mute]);
 
   return (
     <div className="absolute bottom-0 left-0 w-full px-4 pt-4 pb-2 flex items-center justify-between bg-[#0A0A0B] border-solid border-t-2 border-[#232426]">
-      <div className="flex items-center gap-8 w-[15em]">
+      <div className="flex items-center gap-8 w-[8em] lg:w-[15em]">
         <div className="flex flex-col items-start justify-start">
           <div className="text-white font-bold">Dooba</div>
           <div className="text-[#b3b3b3] font-['Arial'] font-normal text-sm">
@@ -84,7 +91,7 @@ export default function BottomPanel() {
           onTimeChange={handleTimeChange}
         />
       </div>
-      <div className="flex items-center gap-3 w-[15em]">
+      <div className="flex items-center gap-3 w-[12rem] lg:w-[15em]">
         {!mute ? (
           <LuVolume1 style={iconStyleMed} onClick={handleMute} />
         ) : (

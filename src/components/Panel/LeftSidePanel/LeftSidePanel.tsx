@@ -9,7 +9,7 @@ import { MdOutlineLibraryMusic } from "react-icons/md";
 import { FiDownload } from "react-icons/fi";
 import { FaRegHeart } from "react-icons/fa";
 import { FaRegFile } from "react-icons/fa";
-import NavList from "../NavList/NavList";
+import NavList from "@/components/NavList/NavList";
 
 interface NavItem {
   id: number;
@@ -25,7 +25,7 @@ const iconStyle = {
 };
 const collapseStyle = { display: "none" };
 const iconStyleSmall = { color: "white", fontSize: "1.25rem" };
-const iconStyleSmallActive = { color: "blue", fontSize: "1.25em" };
+const iconStyleSmallActive = { color: "blue", fontSize: "1.25rem" };
 
 const features: NavItem[] = [
   { id: 1, name: "Home", icon: <BiSolidHome style={iconStyleSmallActive} /> },

@@ -11,24 +11,30 @@ interface NavListProps {
   title: string;
   data: NavItem[];
   collapse: boolean;
+  defaultActive?: string;
 }
 
-const listItemStyle = {
+const listItemStyle: React.CSSProperties = {
   color: "white",
   fontFamily: "Arial",
   fontWeight: "normal",
 };
-const listItemActiveStyle = {
+const listItemActiveStyle: React.CSSProperties = {
   color: "blue",
   fontFamily: "Arial",
   fontWeight: "normal",
 };
-const collapseStyle = {
+const collapseStyle: React.CSSProperties = {
   display: "none",
 };
 
-export default function NavList({ title, data, collapse }: NavListProps) {
-  const [active, setActive] = useState("Home");
+export default function NavList({
+  title,
+  data,
+  collapse,
+  defaultActive = "Home",
+}: NavListProps) {
+  const [active, setActive] = useState(defaultActive);
   return (
     <div className="flex flex-col gap-1 items-start justify-start">
       <div
@@ -47,6 +53,7 @@ export default function NavList({ title, data, collapse }: NavListProps) {
               collapse ? "gap-0 justify-center" : "gap-4"
             } items-start cursor-pointer w-full py-2 px-4 hover:bg-[#242424]`}
             key={item.id}
+            onClick={() => setActive(item.name)}
           >
             {item.icon}
             <div

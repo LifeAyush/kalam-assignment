@@ -1,13 +1,12 @@
-import LeftSidePanel from "@/components/LeftSidePanel/LeftSidePanel";
+import LeftSidePanel from "@/components/Panel/LeftSidePanel/LeftSidePanel";
 import MainArea from "@/components/MainArea/MainArea";
-import RightSidePanel from "@/components/RightSidePanel/RightSidePanel";
-import "./globals.css"
-import MusicPlayer from "@/components/BottomPanel/BottomPanel";
+import RightSidePanel from "@/components/Panel/RightSidePanel/RightSidePanel";
+import MusicPlayer from "@/components/Panel/BottomPanel/BottomPanel";
+import "@/app/globals.css";
 
-export default function Home() {
+export default function HomePage() {
   return (
     <main className="h-screen flex relative">
-    {/* <main className="h-screen border-solid border-2 border-red-900"> */}
       <LeftSidePanel />
       <MainArea />
       <RightSidePanel />

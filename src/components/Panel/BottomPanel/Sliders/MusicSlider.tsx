@@ -25,7 +25,7 @@ const MusicSlider: React.FC<MusicSliderProps> = ({
       step="1"
       value={currentTime}
       onChange={handleTimeChange}
-      className={styles.musicSlider}
+      className={styles.musicSlider} 
     />
   );
 };

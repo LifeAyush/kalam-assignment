@@ -1,26 +1,20 @@
 "use client";
-import { useState } from "react";
-import { StaticImageData } from "next/image";
+import React, { useState } from "react";
 import SongCard from "./SongCard";
-import React from "react";
-
-interface SongCard {
-  id: number;
-  image: StaticImageData;
-  name: string;
-  singer: string;
-}
+import { SongCardData } from "@/types/types";
 
 interface CardDisplayProps {
   title: string;
-  data: SongCard[];
+  data: SongCardData[];
 }
 
 export default function CardDisplay({ title, data }: CardDisplayProps) {
   const [displayMore, setDisplayMore] = useState(false);
+
   const handleMore = () => {
     setDisplayMore(!displayMore);
   };
+
   return (
     <div className="flex flex-col justify-center items-start w-full gap-4">
       <div className="flex items-center justify-between w-full">
@@ -38,7 +32,7 @@ export default function CardDisplay({ title, data }: CardDisplayProps) {
         {displayMore
           ? data.map((song) => <SongCard data={song} key={song.id} />)
           : data
-              .slice(0, 5)
+              .slice(0, 6)
               .map((song) => <SongCard data={song} key={song.id} />)}
       </div>
     </div>
