@@ -53,7 +53,6 @@ export default function NavList({
               collapse ? "gap-0 justify-center" : "gap-4"
             } items-start cursor-pointer w-full py-2 px-4 hover:bg-[#242424]`}
             key={item.id}
-            onClick={() => setActive(item.name)}
           >
             {item.icon}
             <div
