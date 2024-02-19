@@ -1,20 +1,18 @@
 import Banner from "./Banner";
 import CardDisplay from "./CardDisplay";
 import MainAreaControls from "./MainAreaControls";
-import songCover1 from "@/assets/songCover1.jpeg";
-import songCover2 from "@/assets/songCover2.jpeg";
 import { SongCardData } from "@/types/types";
 
 const SongCards: SongCardData[] = Array.from({ length: 10 }, (_, index) => ({
   id: index + 1,
-  image: songCover1,
+  image: "/songCover1.jpeg",
   name: "lofi beats",
   singer: "chill beats, lofi vibes, new relaxing tracks every…",
 }));
 
 const NewReleases: SongCardData[] = Array.from({ length: 10 }, (_, index) => ({
   id: index + 1,
-  image: songCover2,
+  image: "/songCover2.jpeg",
   name: "Chill Hits",
   singer: "Kick back to the best new and recent chill beats…",
 }));

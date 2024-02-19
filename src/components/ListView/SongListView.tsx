@@ -1,11 +1,10 @@
-import Image from "next/image";
 import { Song } from "@/types/types";
 
 export default function SongListView({ song }: { song: Song }) {
   return (
     <div className="flex justify-between items-center w-full px-4 py-1 cursor-pointer hover:bg-[#242424]">
       <div className="flex items-center gap-2">
-        <Image
+        <img
           src={song.image}
           alt={song.name}
           className="h-[48px] w-[48px] object-cover rounded"

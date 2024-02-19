@@ -1,6 +1,3 @@
-import Image from "next/image";
-import bannerImage from "@/assets/bannerImage.png";
-
 export default function Banner() {
   return (
     <div className="md:flex items-center justify-between rounded-lg bg-[#FF47C5] w-full p-12 hidden">
@@ -19,8 +16,8 @@ export default function Banner() {
           LISTEN NOW
         </div>
       </div>
-      <Image
-        src={bannerImage}
+      <img
+        src="/bannerImage.png"
         alt="Banner Image"
         className="w-[42%] object-contain"
       />

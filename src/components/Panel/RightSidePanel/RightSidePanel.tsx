@@ -1,5 +1,3 @@
-import Image from "next/image";
-import userProfile from "@/assets/userProfile.jpg";
 import { LuBellDot } from "react-icons/lu";
 import { FaAngleDown } from "react-icons/fa6";
 import ListView from "@/components/ListView/ListView";
@@ -13,7 +11,7 @@ export default function RightSidePanel() {
     name: "Savage",
     singer: "Aespa",
     time: "7 mins",
-    image: userProfile,
+    image: "/userProfile.jpg",
   }));
 
   const MyPlaylists: Playlist[] = Array.from({ length: 4 }, (_, index) => ({
@@ -21,7 +19,7 @@ export default function RightSidePanel() {
     name: "Land of rising",
     songs: 38,
     time: "2hr 43 mins",
-    image: userProfile,
+    image: "/userProfile.jpg",
   }));
 
   const listViewProps = [
@@ -32,8 +30,8 @@ export default function RightSidePanel() {
     <div className="scroll-container xl:flex flex-col w-[300px] h-full bg-[#0A0A0A] gap-6 flex-shrink-0 py-7 overflow-y-scroll hidden">
       <div className="flex justify-between items-start w-full p-4">
         <div className="flex items-center justify-start gap-3">
-          <Image
-            src={userProfile}
+          <img
+            src="/userProfile.jpg"
             alt="User Profile Pic"
             className="w-[24px] h-[24px] rounded-full object-cover"
             style={{

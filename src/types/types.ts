@@ -1,11 +1,9 @@
-import { StaticImageData } from "next/image";
-
 export interface Song {
   id: number;
   name: string;
   singer: string;
   time: string;
-  image: StaticImageData;
+  image: string;
 }
 
 export interface Playlist {
@@ -13,12 +11,12 @@ export interface Playlist {
   name: string;
   songs: number;
   time: string;
-  image: StaticImageData;
+  image: string;
 }
 
 export interface SongCardData {
   id: number;
-  image: StaticImageData;
+  image: string;
   name: string;
   singer: string;
 }

@@ -1,10 +1,9 @@
-import Image from "next/image";
 import { SongCardData } from "@/types/types";
 
 export default function SongCard({ data }: { data: SongCardData }) {
   return (
     <div className="flex flex-col flex-shrink-0 justify-center items-start gap-4 rounded-lg w-[10.2rem] cursor-pointer">
-      <Image
+      <img
         src={data.image}
         alt={data.name} 
         className="w-full rounded-md object-cover"
